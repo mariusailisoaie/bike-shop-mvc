@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-header {
+  height: 70px;
+  width: 100%;
+  background-color: #51a2ff;
+}
+
+.main-header li:first-of-type {
+  margin-left: 100px;
+}
+
+.main-header li {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.main-header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.main-header a:hover {
+  color: #000;
+}
