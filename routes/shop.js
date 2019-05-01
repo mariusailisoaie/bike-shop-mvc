@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.render('shop', { pageTitle: 'Shop' });
-});
+const productsController = require('../controllers/products');
+
+router.get('/', productsController.renderBikes);
 
 module.exports = router;
