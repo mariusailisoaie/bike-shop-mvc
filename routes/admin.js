@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/add-product', (req, res, next) => {
-  res.render('admin', { pageTitle: 'Add Product' });
-});
+const productsController = require('../controllers/products');
+
+router.get('/add-product', productsController.getAddBikePage);
+
+router.post('/post-bike', productsController.postBike);
 
 module.exports = router;
