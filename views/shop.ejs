@@ -6,5 +6,16 @@
     <%- include('./includes/navigation.ejs') %>
   </header>
   <h1><%= pageTitle %></h1>
+  
+  <% if (bikes.length > 0) { %>
+    <% console.log('bikes') %>
+    <ul>
+      <% bikes.forEach(bike => { %>
+        <li>Bike Name: <%= bike.bikeName %></li>
+        <li>Bike Price: <%= bike.bikePrice %></li>
+        <li>Bike Description: <%= bike.bikeDescription %></li>
+      <% }); %>
+    </ul>
+  <% } %>  
 
 <%- include('./includes/end.ejs') %>
