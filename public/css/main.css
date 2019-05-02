@@ -28,3 +28,22 @@
 .main-header a:hover {
   color: #000;
 }
+
+.container {
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.bike-container {
+  margin-top: 100px;
+  text-align: center;
+  height: 300px;
+  width: 33.33%;
+}
+
+.bike-container ul {
+  list-style: none;
+}
