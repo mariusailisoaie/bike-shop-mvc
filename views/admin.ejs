@@ -5,25 +5,32 @@
   <header class="main-header">
     <%- include('./includes/navigation.ejs') %>
   </header>
-  <h1><%= pageTitle %></h1>
+
+  <div class="container">
+    <form action="/admin/post-bike" method="post">
+      
+      <div>
+        <label for="bikeName">Bike name</label>
+        <input type="text" name="bikeName" placeholder="Bike name">
+      </div>
   
-  <form action="/admin/post-bike" method="post">
-    
-    <div>
-      <label for="bikeName">Bike name</label>
-      <input type="text" name="bikeName" placeholder="Bike name">
-    </div>
+      <div>
+        <label for="bikePrice">Bike price</label>
+        <input type="text" name="bikePrice" placeholder="Bike price">
+      </div>
+  
+      <div>
+        <label for="bikeDescription">Bike description</label>
+        <input type="text" name="bikeDescription" placeholder="Bike description">
+      </div>
+  
+      <div>
+          <label for="bikeUrl">Bike image</label>
+          <input type="text" name="bikeUrl" placeholder="Bike url">
+      </div>
+  
+      <button type="submit">Add product</button>
+    </form>
+  </div>
 
-    <div>
-      <label for="bikePrice">Bike price</label>
-      <input type="text" name="bikePrice" placeholder="Bike price">
-    </div>
-
-    <div>
-      <label for="bikeDescription">Bike description</label>
-      <input type="text" name="bikeDescription" placeholder="Bike description">
-    </div>
-
-    <button type="submit">Add product</button>
-  </form>
 <%- include('./includes/end.ejs') %>
