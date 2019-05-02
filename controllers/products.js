@@ -13,5 +13,7 @@ exports.postBike = (req, res, next) => {
 }
 
 exports.renderBikes = (req, res, next) => {
-  res.render('shop', { pageTitle: 'Shop', bikes: Bike.fetchAll() });
+  Bike.fetchAll(bikes => {
+    res.render('shop', { pageTitle: 'Shop', bikes });
+  });
 }
