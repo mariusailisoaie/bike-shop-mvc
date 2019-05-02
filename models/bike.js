@@ -1,23 +1,5 @@
-const bikes = [
-  {
-    bikeName: 'Mountain Bike',
-    bikePrice: '$ 500',
-    bikeDescription: 'This is a very nice bike for climbing mountains.',
-    bikeUrl: 'https://images.pexels.com/photos/462036/pexels-photo-462036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=680&w=480',
-  },
-  {
-    bikeName: 'BMX',
-    bikePrice: '300 EUR',
-    bikeDescription: 'Bike for tricks in the park.',
-    bikeUrl: 'https://images.pexels.com/photos/1580234/pexels-photo-1580234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=640&w=480',
-  },
-  {
-    bikeName: 'City Bike',
-    bikePrice: '400 EUR',
-    bikeDescription: 'Ideal for city rides.',
-    bikeUrl: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=640&w=480',
-  }
-];
+const fs = require('fs');
+const path = require('path');
 
 module.exports = class Bike {
   constructor(bikeName, bikePrice, bikeDescription, bikeUrl) {
@@ -28,10 +10,32 @@ module.exports = class Bike {
   }
 
   save() {
-    bikes.push(this);
+    const pathToDbFile = path.join(path.dirname(process.mainModule.filename), 'database', 'db.json');
+
+    fs.readFile(pathToDbFile, (err, data) => {
+      let bikes = [];
+      if (!err) {
+        bikes = JSON.parse(data);
+      }
+
+      bikes.push(this);
+
+      fs.writeFile(pathToDbFile, JSON.stringify(bikes), err => {
+        if (err) return console.log(err);
+
+        console.log('bike added to db');
+      });
+    });
   }
 
-  static fetchAll() {
-    return bikes;
+  static fetchAll(cb) {
+    const pathToDbFile = path.join(path.dirname(process.mainModule.filename), 'database', 'db.json');
+
+    fs.readFile(pathToDbFile, (err, data) => {
+      if (err) {
+        return cb([]);
+      }
+      cb(JSON.parse(data));
+    });
   }
 }
