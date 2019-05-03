@@ -1,6 +1,7 @@
 <nav>
   <ul>
-    <li><a href="/">Shop</a></li>
-    <li><a href="/admin/add-product">Admin</a></li>
+    <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a></li>
+    <li><a href="/bikes" class="<%= path === '/bikes' ? 'active' : '' %>">Bikes</a></li>
+    <li><a href="/admin/add-bike" class="<%= path === '/admin/add-bike' ? 'active' : '' %>">Admin</a></li>
   </ul>
 </nav>
