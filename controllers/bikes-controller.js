@@ -1,7 +1,7 @@
 const Bike = require('../models/bike');
 
 exports.getAddBikePage = (req, res, next) => {
-  res.render('admin/add-product', { pageTitle: 'Add Product' });
+  res.render('admin/add-bike', { pageTitle: 'Add Product', path: '/admin/add-bike' });
 }
 
 exports.postBike = (req, res, next) => {
@@ -14,6 +14,6 @@ exports.postBike = (req, res, next) => {
 
 exports.renderBikes = (req, res, next) => {
   Bike.fetchAll(bikes => {
-    res.render('shop/bikes-list', { pageTitle: 'Shop', bikes });
+    res.render('shop/bikes-list', { pageTitle: 'Shop', path: '/bikes', bikes });
   });
 }
