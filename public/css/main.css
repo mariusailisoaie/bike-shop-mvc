@@ -25,6 +25,10 @@
   font-size: 25px;
 }
 
+.main-header a.active {
+  color: #000;
+}
+
 .main-header a:hover {
   color: #000;
 }
