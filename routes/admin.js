@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const productsController = require('../controllers/products');
+const bikesController = require('../controllers/bikes-controller');
 
-router.get('/add-product', productsController.getAddBikePage);
+router.get('/add-product', bikesController.getAddBikePage);
 
-router.post('/post-bike', productsController.postBike);
+router.post('/post-bike', bikesController.postBike);
 
 module.exports = router;
