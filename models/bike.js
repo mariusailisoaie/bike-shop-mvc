@@ -1,6 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
+const pathToDbFile = path.join(path.dirname(process.mainModule.filename), 'database', 'db.json');
+
+const getAllBikes = cb => {
+  fs.readFile(pathToDbFile, (err, data) => {
+    if (err) {
+      return cb([]);
+    }
+    cb(JSON.parse(data));
+  });
+}
+
 module.exports = class Bike {
   constructor(bikeName, bikePrice, bikeDescription, bikeUrl) {
     this.bikeName = bikeName;
@@ -10,14 +21,7 @@ module.exports = class Bike {
   }
 
   save() {
-    const pathToDbFile = path.join(path.dirname(process.mainModule.filename), 'database', 'db.json');
-
-    fs.readFile(pathToDbFile, (err, data) => {
-      let bikes = [];
-      if (!err) {
-        bikes = JSON.parse(data);
-      }
-
+    getAllBikes(bikes => {
       bikes.push(this);
 
       fs.writeFile(pathToDbFile, JSON.stringify(bikes), err => {
@@ -29,13 +33,6 @@ module.exports = class Bike {
   }
 
   static fetchAll(cb) {
-    const pathToDbFile = path.join(path.dirname(process.mainModule.filename), 'database', 'db.json');
-
-    fs.readFile(pathToDbFile, (err, data) => {
-      if (err) {
-        return cb([]);
-      }
-      cb(JSON.parse(data));
-    });
+    getAllBikes(cb);
   }
 }
