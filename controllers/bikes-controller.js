@@ -1,7 +1,7 @@
 const Bike = require('../models/bike');
 
 exports.getAddBikePage = (req, res, next) => {
-  res.render('admin/admin', { pageTitle: 'Add Product' });
+  res.render('admin/add-product', { pageTitle: 'Add Product' });
 }
 
 exports.postBike = (req, res, next) => {
