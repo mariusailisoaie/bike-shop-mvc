@@ -10,6 +10,13 @@ exports.renderBikes = (req, res, next) => {
   });
 }
 
+exports.renderBikeDetails = (req, res, next) => {
+  const bikeId = req.params.bikeId;
+  Bike.findById(parseInt(bikeId), bike => {
+    res.render('shop/bike-details', { pageTitle: 'Bike Details', path: '/bike', bike })
+  });
+}
+
 exports.renderCart = (req, res, next) => {
   res.render('shop/cart', { pageTitle: 'Cart', path: '/cart' });
 }
