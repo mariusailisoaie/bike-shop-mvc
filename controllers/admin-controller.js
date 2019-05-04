@@ -12,8 +12,8 @@ exports.postBike = (req, res, next) => {
   res.redirect('/');
 }
 
-exports.renderBikes = (req, res, next) => {
+exports.getAdminProductsPage = (req, res, next) => {
   Bike.fetchAll(bikes => {
-    res.render('shop/bikes-list', { pageTitle: 'Shop', path: '/bikes', bikes });
+    res.render('admin/bikes', { pageTitle: 'Admin Products', path: '/admin/bikes', bikes });
   });
 }
