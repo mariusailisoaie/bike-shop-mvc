@@ -101,10 +101,15 @@
   justify-content: space-around;
 }
 
-.bike-container .btn:hover {
+.btn:hover {
   background-color: #0077ff
 }
 
 .bike-container ul {
   list-style: none;
+}
+
+.centered {
+  text-align: center;
+  margin: 100px auto 0;
 }
