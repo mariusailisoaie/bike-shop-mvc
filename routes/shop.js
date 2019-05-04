@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const bikesController = require('../controllers/bikes-controller');
-const homeController = require('../controllers/home-controller');
+const shopController = require('../controllers/shop-controller');
 
-router.get('/', homeController.renderHomePage);
-router.get('/bikes', bikesController.renderBikes);
+router.get('/', shopController.renderHomePage);
+router.get('/bikes', shopController.renderBikes);
+router.get('/cart', shopController.renderCart);
 
 module.exports = router;
