@@ -41,6 +41,39 @@
   flex-flow: row wrap;
 }
 
+.container form {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container form div {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container form div input {
+  height: 25px;
+}
+
+.container form div label {
+  font-size: 120%;
+  margin-bottom: 5px;
+}
+
+.container form button {
+  height: 30px;
+  background-color: #51a2ff;
+}
+
+.container form button:hover {
+  height: 30px;
+  background-color: #0077ff;
+}
+
 .bike-container {
   margin-top: 100px;
   text-align: center;

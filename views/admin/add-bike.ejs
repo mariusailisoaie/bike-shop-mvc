@@ -11,25 +11,25 @@
       
       <div>
         <label for="bikeName">Bike name</label>
-        <input type="text" name="bikeName" placeholder="Bike name">
+        <input type="text" name="bikeName" placeholder="Bike name" required>
       </div>
   
       <div>
         <label for="bikePrice">Bike price</label>
-        <input type="text" name="bikePrice" placeholder="Bike price">
-      </div>
-  
-      <div>
-        <label for="bikeDescription">Bike description</label>
-        <input type="text" name="bikeDescription" placeholder="Bike description">
+        <input type="number" name="bikePrice" placeholder="Bike price" step="0.01" required>
       </div>
   
       <div>
           <label for="bikeUrl">Bike image</label>
-          <input type="text" name="bikeUrl" placeholder="Bike url">
+          <input type="text" name="bikeUrl" placeholder="Bike url" required>
+      </div>
+
+      <div>
+        <label for="bikeDescription">Bike description</label>
+        <textarea name="bikeDescription" id="bikeDescription" cols="30" rows="7" required></textarea>
       </div>
   
-      <button type="submit">Add product</button>
+      <button type="submit">Add bike</button>
     </form>
   </div>
 
