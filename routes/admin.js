@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const bikesController = require('../controllers/bikes-controller');
+const adminController = require('../controllers/admin-controller');
 
-router.get('/add-bike', bikesController.getAddBikePage);
-
-router.post('/post-bike', bikesController.postBike);
+router.get('/add-bike', adminController.getAddBikePage);
+router.get('/bikes', adminController.getAdminProductsPage);
+router.post('/post-bike', adminController.postBike);
 
 module.exports = router;
