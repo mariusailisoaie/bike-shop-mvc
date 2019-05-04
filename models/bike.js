@@ -36,4 +36,11 @@ module.exports = class Bike {
   static fetchAll(cb) {
     getAllBikes(cb);
   }
+
+  static findById(id, cb) {
+    getAllBikes(bikes => {
+      const bike = bikes.find(bike => bike.bikeId === id);
+      cb(bike);
+    });
+  }
 }
