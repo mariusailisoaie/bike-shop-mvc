@@ -1,0 +1,25 @@
+<%- include('../includes/start.ejs') %>
+
+</head>
+<body>
+  <header class="main-header">
+    <%- include('../includes/navigation.ejs') %>
+  </header>
+  <div class="container">
+    <% if (bikes.length > 0) { %>
+      <% bikes.forEach(bike => { %>
+        <div class="bike-container">
+          <ul>
+            <img src=<%= bike.bikeUrl %> alt="Bike image" height="200px" width="60%">
+            <li><%= bike.bikeName %></li>
+            <li><%= bike.bikeDescription %></li>
+            <li>Price: <%= bike.bikePrice %></li>
+          </ul>
+        </div>
+        <% }); %>
+    <% } else { %>
+      <h1>No bike in the shop at the moment...</h1>
+    <% } %>
+  </div>
+
+<%- include('../includes/end.ejs') %>
