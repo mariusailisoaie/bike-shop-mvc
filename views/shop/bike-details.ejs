@@ -1,0 +1,22 @@
+<%- include('../includes/start.ejs') %>
+
+</head>
+<body>
+  <header class="main-header">
+    <%- include('../includes/navigation.ejs') %>
+  </header>
+
+  <div class="container">
+    <div class="centered">
+      <h1><%= bike.bikeName %></h1>
+      <hr>
+      <img src="<%= bike.bikeUrl %>" alt="<%= bike.bikeName %>" height="200px" width="300px">
+      <h2><%= bike.bikeDescription %></h2>
+      <h3>$<%= bike.bikePrice %></h3>
+      <form action="/add-to-cart" method="post">
+        <button type="submit" class="btn">Add to cart</button>
+      </form>
+    </div>
+  </div>
+
+<%- include('../includes/end.ejs') %>
