@@ -16,6 +16,13 @@
             <li><%= bike.bikeDescription %></li>
             <li>Price: $<%= bike.bikePrice %></li>
           </ul>
+
+          <div>
+            <a href="/bikes/<%= bike.bikeId %>" class="btn">Details</a>
+            <form action="/add-to-cart" method="post">
+              <button type="submit" class="btn">Add to cart</button>
+            </form>
+          </div>
         </div>
         <% }); %>
     <% } else { %>
