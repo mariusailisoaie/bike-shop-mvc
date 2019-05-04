@@ -21,6 +21,7 @@ module.exports = class Bike {
   }
 
   save() {
+    this.bikeId = Math.floor(Math.random() * 10000);
     getAllBikes(bikes => {
       bikes.push(this);
 
