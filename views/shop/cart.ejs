@@ -6,4 +6,11 @@
     <%- include('../includes/navigation.ejs') %>
   </header>
 
+  <% console.log(bike) %>
+
+  <% if (bike) { %>
+    <img src="<%= bike.bikeUrl %>" alt="<%= bike.bikeName %>">
+  <% } else { %>
+    <h1>Your cart is empty at the moment...</h1>
+  <% } %>
 <%- include('../includes/end.ejs') %>

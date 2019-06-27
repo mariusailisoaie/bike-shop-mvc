@@ -7,5 +7,6 @@ router.get('/', shopController.renderHomePage);
 router.get('/bikes', shopController.renderBikes);
 router.get('/bikes/:bikeId', shopController.renderBikeDetails);
 router.get('/cart', shopController.renderCart);
+router.post('/cart', shopController.postCart);
 
 module.exports = router;

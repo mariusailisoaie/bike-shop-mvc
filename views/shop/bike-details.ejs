@@ -13,8 +13,9 @@
       <img src="<%= bike.bikeUrl %>" alt="<%= bike.bikeName %>" height="200px" width="300px">
       <h2><%= bike.bikeDescription %></h2>
       <h3>$<%= bike.bikePrice %></h3>
-      <form action="/add-to-cart" method="post">
+      <form action="/cart" method="post">
         <button type="submit" class="btn">Add to cart</button>
+        <input type="hidden" name="bikeId" value="<%= bike.bikeId %>">
       </form>
     </div>
   </div>
